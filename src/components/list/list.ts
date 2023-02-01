@@ -2,11 +2,13 @@
 import { PetStructure } from '../../models/pet';
 import { Component } from '../component/component';
 
+import './list.scss';
+
 export class Pets extends Component {
   constructor(public selector: string, public pets: PetStructure[]) {
     super();
     this.template = this.createTemplate();
-    this.render('afterbegin');
+    this.render('beforebegin');
   }
 
   createTemplate() {
@@ -14,10 +16,12 @@ export class Pets extends Component {
       .map(
         (item) =>
           `<li>
-          <span>ID: ${item.id}</span>
-          <span>Nombre de la mascota: ${item.name}</span>
-          <span>Raza: ${item.breed}</span>
-          <span>Adoptado: ${item.isAdopted}</span>
+          <img src="../../../public/${item.name}.jpeg" alt="Dog">
+          <div>ID: ${item.id}</div>
+          <div>Nombre de la mascota: ${item.name}</div>
+          <div>Raza: ${item.breed}</div>
+          <div>Adoptado: ${item.isAdopted}</div>
+
         </li>`
       )
       .join('\n');
