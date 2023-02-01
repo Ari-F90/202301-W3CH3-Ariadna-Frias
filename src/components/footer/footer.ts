@@ -11,9 +11,9 @@ export class Footer extends Component {
 
   createTemplate() {
     return `
-       <footer>
+    <footer>
     <address>PET Company ©</address>
-  </footer>
+    </footer>
     `;
   }
 }
